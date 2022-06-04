@@ -1,0 +1,474 @@
+[
+    {
+        "id": "e2154cfb1aefc2e0",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5bdedcd870f38a5f",
+        "type": "rpi-gpio out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "pin": "22",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 940,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6c74d842ce8bfabf",
+        "type": "serial in",
+        "z": "e2154cfb1aefc2e0",
+        "name": "Arduino",
+        "serial": "968437cf59444b39",
+        "x": 290,
+        "y": 840,
+        "wires": [
+            [
+                "377151b76d35c5e6"
+            ]
+        ]
+    },
+    {
+        "id": "ec8d937e373b494b",
+        "type": "ui_gauge",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "group": "4dabc0d90283471a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Motor Position",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-500",
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 880,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "48796e414077bbd4",
+        "type": "mqtt out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/DCMOTOROFF",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "60850f3de568c475",
+        "x": 770,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "0077fa97a1bf76d4",
+        "type": "mqtt in",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/DCMOTOROFF",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "60850f3de568c475",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "5bdedcd870f38a5f",
+                "81a8743a40d9f9d6"
+            ]
+        ]
+    },
+    {
+        "id": "e5b0f6e3a92825ae",
+        "type": "ui_button",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "group": "4dabc0d90283471a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "OFF",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 100,
+        "wires": [
+            [
+                "48796e414077bbd4"
+            ]
+        ]
+    },
+    {
+        "id": "377151b76d35c5e6",
+        "type": "mqtt out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/VALUES",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "60850f3de568c475",
+        "x": 700,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "dca657c4e41eea5a",
+        "type": "mqtt in",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/VALUES",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "60850f3de568c475",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 460,
+        "y": 980,
+        "wires": [
+            [
+                "ec8d937e373b494b"
+            ]
+        ]
+    },
+    {
+        "id": "81a8743a40d9f9d6",
+        "type": "rpi-gpio out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "pin": "27",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 940,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "bce98c93730097ea",
+        "type": "rpi-gpio out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "pin": "22",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1020,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f115b250e9144a94",
+        "type": "mqtt out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/DIRCW",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "60850f3de568c475",
+        "x": 720,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "fd4f61d1b1a9d187",
+        "type": "mqtt in",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/DIRCCW",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "60850f3de568c475",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 480,
+        "y": 480,
+        "wires": [
+            [
+                "e97bbba32d1dbc7f",
+                "047877ce72fa7687"
+            ]
+        ]
+    },
+    {
+        "id": "3f75d3966a9c4caa",
+        "type": "ui_button",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "group": "4dabc0d90283471a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "TURNCW",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "blue",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 340,
+        "y": 340,
+        "wires": [
+            [
+                "f115b250e9144a94"
+            ]
+        ]
+    },
+    {
+        "id": "e97bbba32d1dbc7f",
+        "type": "rpi-gpio out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "pin": "27",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1020,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "047877ce72fa7687",
+        "type": "Invert",
+        "z": "e2154cfb1aefc2e0",
+        "name": "Invert",
+        "x": 870,
+        "y": 420,
+        "wires": [
+            [
+                "bce98c93730097ea"
+            ]
+        ]
+    },
+    {
+        "id": "df31f88810033ee8",
+        "type": "rpi-gpio out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "pin": "22",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1020,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d2002bac1d6a1c90",
+        "type": "mqtt out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/DIRCCW",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "60850f3de568c475",
+        "x": 730,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "7c51b6776f8ae7ce",
+        "type": "mqtt in",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "topic": "projekt-ulesanne__hazi-feladat_2022-spring-its8050/DIRCW",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "60850f3de568c475",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 480,
+        "y": 720,
+        "wires": [
+            [
+                "4b231933e7108eda",
+                "df31f88810033ee8"
+            ]
+        ]
+    },
+    {
+        "id": "8f780cd039ee8d9a",
+        "type": "ui_button",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "group": "4dabc0d90283471a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "TURNCCW",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 330,
+        "y": 580,
+        "wires": [
+            [
+                "d2002bac1d6a1c90"
+            ]
+        ]
+    },
+    {
+        "id": "7714b60f5aa62189",
+        "type": "rpi-gpio out",
+        "z": "e2154cfb1aefc2e0",
+        "name": "",
+        "pin": "27",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1020,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "4b231933e7108eda",
+        "type": "Invert",
+        "z": "e2154cfb1aefc2e0",
+        "name": "Invert",
+        "x": 850,
+        "y": 740,
+        "wires": [
+            [
+                "7714b60f5aa62189"
+            ]
+        ]
+    },
+    {
+        "id": "968437cf59444b39",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "4dabc0d90283471a",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "38b56a66e4480aa4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "60850f3de568c475",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "38b56a66e4480aa4",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
